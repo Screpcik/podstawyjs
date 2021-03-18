@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form oninput="ObliczenieCeny()">
+            <div>
+                <label id=cenaUslugi></label>
+            <label for="currList">Cena wynosi:</label>
+                <select onchange="WycenaWaluta(this.value)" id="currList" aria-label="pick walute">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+             </select>
+            </div>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Rodzaj</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="genFem" value="optionF">
+                    <label class="form-check-label" for="genFem">
+                        Żeńskie
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="genMal" value="optionM">
+                    <label class="form-check-label" for="genMal">
+                        Męskie
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="genBrak" value="optionB">
+                    <label class="form-check-label" for="genBrak">
+                        Bez wyboru
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Dodatkowe usługi</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridMycie">
+                    <label class="form-check-label" for="gridMycie">
+                        Mycie
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridFarbowanie" oninput="FarbowanieSwitch()">
+                    <label class="form-check-label" for="gridFarbowanie">
+                        Farbowanie
+                    </label>
+                    <br />
+                    <select id="farbowanieWybor" class="form-select" aria-label="Wybierz farbowanie" disabled>
+                        <option value="">Wybierz opcję</option>
+                        <option value="kolor_1">1 kolor</option>
+                        <option value="ombre">Ombre</option>
+                        <option value="sombre">Sombre</option>
+                        <option value="pasemka">Pasemka</option>
+                        <option value="cover">Cover</option>
+                        <option value="balejage">Balejage</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Pliki</legend>
+            <div class="mb-3">
+                <label for="txtOpisTekst" class="form-label">Załącz plik txt</label>
+                <input type="file" class="form-control-file" id="plikTxt" placeholder="załącz plik" onchange="PobierzPlikTxt()" />
+                <textarea class="form-control" id="txtOpisText" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label">Załącz plik foto</label>
+                <input type="file" class="form-control-file" id="plikImg" placeholder="załącz plik" onchange="PobierzPlikFoto()" />
+                <img id="plikFoto" width="450">
+            </div>
+        </fieldset>
+    </form>
+    <script src="pageFryzjer.js"></script>
+</body>
+</html>
